@@ -1,5 +1,49 @@
-<!--
-
-and so it begins
-
--->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plup - Produce Lookup Utility</title>
+    <link rel="icon" type="image/xicon" sizes="32x32" href="/assets/img/favi/favi_wht.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="assets/site/styles.css">
+    <link rel="manifest" href="/manifest.json">
+</head>
+<body>
+    <header>
+        <div id="hamburger-icon" class="hamburger-icon">
+            &#9776;
+        </div>
+        <img src="assets/branding/logo/w_logo.png" alt="Plup Logo" id="logo">
+        <input type="text" id="searchInput" placeholder="Search by PLU or name..." autocomplete="off">
+    </header>
+    <div id="hamburger-menu" class="hamburger-menu">
+        <div class="menu-icon">
+            <img src="assets/branding/icon/fragments/b_icon_512.png" alt="Menu Icon">
+            <span>Menu</span>
+        </div>
+        <ul>
+            <li><a href="#" id="home-link">🏠 Home</a></li>
+            <li><a href="#" id="preferences-link">⚙️ Preferences</a></li>
+            <li><a href="#" id="licenses-link">🧑‍💻 Licenses</a></li>
+            <li><a href="#" id="about-link">🤔 About</a></li>
+        </ul>
+    </div>
+    <div id="menu-overlay" class="menu-overlay"></div>
+    <main>
+        <div id="results"></div>
+    </main>
+    <div id="about-popup" class="popup">
+        <div class="popup-content">
+            <span class="close">&times;</span>
+            <img src="assets/branding/logo/b_logo.png" alt="Plup Logo" class="popup-logo">
+            <p class="version">v0.1.0 (dev)</p>
+            <p>Plup helps retail grocery cashiers quickly search for produce PLU codes and display UPCs on-the-fly.</p>
+            <p>&copy; 2024 Quar. All rights reserved.</p>
+            <p>This project is <a href="https://github.com/QuarTheDev/plup/" target="_blank">open-source</a> and licensed under the <a href="https://github.com/QuarTheDev/plup/blob/main/LICENSE" target="_blank">GNU GPL-3.0</a> license.</p>
+        </div>
+    </div>
+    <script src="assets/site/script.js"></script>
+</body>
+</html>
