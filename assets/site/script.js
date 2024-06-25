@@ -10,6 +10,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const preferencesContent = document.getElementById('preferences-content');
     const preferencesLink = document.getElementById('preferences-link');
     const header = document.querySelector('header');
+    const resultPopup = document.getElementById('result-popup');
+    const closeResultPopup = resultPopup.querySelector('.close-popup');
+
+    const appVersion = "v0.1.2 (dev)";
+
+    document.querySelector('.version').textContent = appVersion;
 
     hamburgerIcon.addEventListener('click', () => {
         hamburgerMenu.style.left = '0';
@@ -29,6 +35,15 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => {
             aboutPopup.style.display = 'none';
             aboutPopup.classList.remove('hidden');
+            closeMenu();
+        }, 300);
+    });
+
+    closeResultPopup.addEventListener('click', () => {
+        resultPopup.classList.add('hidden');
+        setTimeout(() => {
+            resultPopup.style.display = 'none';
+            resultPopup.classList.remove('hidden');
             closeMenu();
         }, 300);
     });
@@ -114,18 +129,33 @@ document.addEventListener('DOMContentLoaded', () => {
                 const imgPath = `assets/img/produce/${item.plu}.jpg`;
                 div.innerHTML = `
                     <img src="${imgPath}" onerror="this.onerror=null; this.src='images/notfound.jpg'" alt="${item.dispName}">
-                    <p><strong>${item.dispName}</strong> - PLU: ${item.plu}</p>
+                    <p><strong>${item.dispName}</strong></p>
+                    <p class="plu">PLU ${item.plu}</p>
                     <p class="description">${item.dispDesc}</p>
-                    <p class="class">Class: ${item.class}</p>
+                    <p class="class">${item.class}</p>
                 `;
+                div.addEventListener('click', () => showResultPopup(item));
                 results.appendChild(div);
             });
         }
     }
+
+    function showResultPopup(item) {
+        resultPopup.querySelector('.popup-produce-image').src = `assets/img/produce/${item.plu}.jpg`;
+        resultPopup.querySelector('.popup-produce-image').onerror = function() { this.onerror=null; this.src='images/notfound.jpg'; };
+        resultPopup.querySelector('.popup-produce-name').textContent = item.dispName;
+        resultPopup.querySelector('.popup-produce-plu').textContent = `PLU ${item.plu}`;
+        resultPopup.querySelector('.popup-produce-class').textContent = item.class;
+        resultPopup.querySelector('.popup-produce-description').textContent = item.dispDesc;
+        resultPopup.querySelector('.popup-barcode-image').src = `https://barcodeapi.org/api/128/${item.plu}`;
+
+        menuOverlay.style.opacity = '1';
+        menuOverlay.style.visibility = 'visible';
+        resultPopup.style.display = 'block';
+    }
 });
 
-
-// installable module //
+// Installable module //
 self.addEventListener('install', event => {
     event.waitUntil(
         caches.open('plup-cache').then(cache => {
@@ -156,7 +186,7 @@ if ('serviceWorker' in navigator) {
             console.log('Service Worker registration failed:', err);
         });
     });
-}
+};
 
 document.addEventListener('DOMContentLoaded', () => {
     // selftest

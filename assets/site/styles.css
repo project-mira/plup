@@ -152,10 +152,11 @@ header {
     background-color: #007bff;
     color: white;
     padding: 1rem;
-    width: 92%;
+    width: calc(100% - 1rem);
     text-align: center;
     position: relative;
     z-index: 998;
+    overflow: hidden;
 }
 
 #logo {
@@ -167,17 +168,18 @@ header {
 main {
     padding: 10px;
     margin-top: 2rem;
-    width: 80%;
+    width: 85%;
     max-width: 600px;
 }
 
 #searchInput {
     margin: 1rem 0 0 0;
-    width: 85%;
+    width: 90%;
     padding: 0.5rem;
     font-size: 1rem;
     border-radius: 1rem;
     background: #fff;
+    font-family: "Inter Tight", Arial, sans-serif;
 }
 
 #results {
@@ -192,7 +194,7 @@ main {
     border-radius: 1rem;
     background-color: white;
     padding: 1rem;
-    width: calc(50% - 2.6rem);
+    width: calc(50% - 3rem);
     text-align: center;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     overflow: hidden;
@@ -205,13 +207,26 @@ main {
     min-width: 2rem;
     max-width: 100%;
     height: auto;
-    border-radius: 5px;
+    border-radius: .75rem;
+}
+
+
+.result-item img[src*="images/notfound.jpg"] {
+    border: 1.5px solid #aaa;
 }
 
 .result-item .class {
     font-size: 0.9rem;
     color: #777;
     margin-top: 0.5rem;
+}
+
+.result-item .plu {
+    padding: 0;
+    margin: 0;
+    font-size: 0.75rem;
+    line-height: 1;
+    color: #777;
 }
 
 .result-item p {
@@ -320,4 +335,76 @@ input:checked + .slider:before {
 
 #preferences-content ~ header input {
     display: none;
+}
+
+.popup-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.popup-produce-image {
+    width: 100px;
+    height: auto;
+    border-radius: 0.75rem;
+}
+
+.popup-details {
+    display: flex;
+    flex-direction: column;
+    text-align: left;   
+}
+
+.popup-produce-name {
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+.popup-produce-plu {
+    font-size: 1rem;
+    color: #777;
+    margin: 0.5rem 0;
+}
+
+.popup-produce-class {
+    font-size: 1rem;
+    color: #777;
+}
+
+.popup-produce-description {
+    margin: 1rem 0;
+}
+
+.popup-barcode-image {
+    margin-top: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 0.75rem;
+    width: 143px;
+    height: 109px;
+    overflow: hidden;
+    position: relative;
+}
+
+.popup.hidden {
+    opacity: 0;
+}
+
+.popup-logo {
+    width: 100px;
+}
+
+.version {
+    font-size: 0.6rem;
+    color: #666;
+    margin-bottom: 1rem;
+    margin-top: 0;
+}
+
+.close {
+    position: absolute;
+    top: 25px;
+    right: 10px;
+    cursor: pointer;
+    line-height: 0;
+    font-size: 2.5rem;
 }
