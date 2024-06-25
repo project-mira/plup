@@ -6,6 +6,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const menuOverlay = document.getElementById('menu-overlay');
     const aboutPopup = document.getElementById('about-popup');
     const closeAbout = document.querySelector('.close');
+    const mainContent = document.getElementById('main-content');
+    const preferencesContent = document.getElementById('preferences-content');
+    const preferencesLink = document.getElementById('preferences-link');
+    const header = document.querySelector('header');
 
     hamburgerIcon.addEventListener('click', () => {
         hamburgerMenu.style.left = '0';
@@ -21,16 +25,22 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     closeAbout.addEventListener('click', () => {
-        aboutPopup.style.display = 'none';
-        closeMenu();
+        aboutPopup.classList.add('hidden');
+        setTimeout(() => {
+            aboutPopup.style.display = 'none';
+            aboutPopup.classList.remove('hidden');
+            closeMenu();
+        }, 300);
     });
 
     document.getElementById('home-link').addEventListener('click', () => {
+        showMainContent();
         closeMenu();
     });
 
-    document.getElementById('preferences-link').addEventListener('click', () => {
-        alert('Not implemented');
+    preferencesLink.addEventListener('click', () => {
+        showPreferencesContent();
+        closeMenu();
     });
 
     document.getElementById('licenses-link').addEventListener('click', () => {
@@ -43,24 +53,37 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     function closeMenu(keepOverlay = false) {
-        hamburgerMenu.style.left = '-250px';
+        hamburgerMenu.style.left = '-300px';
         if (!keepOverlay) {
             menuOverlay.style.opacity = '0';
             menuOverlay.style.visibility = 'hidden';
         }
     }
 
+    function showMainContent() {
+        mainContent.style.display = 'block';
+        preferencesContent.style.display = 'none';
+        searchInput.style.display = 'block';
+    }
+
+    function showPreferencesContent() {
+        mainContent.style.display = 'none';
+        preferencesContent.style.display = 'block';
+        searchInput.style.display = 'none';
+    }
+
     fetch('assets/data/en_US.csv')
         .then(response => response.text())
         .then(data => {
             const produceData = parseCSV(data);
-            console.log(produceData); // Check parsed data in the console
+            console.log(produceData);
 
             searchInput.addEventListener('input', () => {
                 const query = searchInput.value.toLowerCase();
                 const filteredData = produceData.filter(item => {
                     return (item.searchName && item.searchName.toLowerCase().includes(query)) ||
-                           (item.plu && item.plu.includes(query));
+                           (item.plu && item.plu.includes(query)) ||
+                           (item.keywords && item.keywords.toLowerCase().includes(query));
                 });
                 displayResults(filteredData);
             });
@@ -93,6 +116,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <img src="${imgPath}" onerror="this.onerror=null; this.src='images/notfound.jpg'" alt="${item.dispName}">
                     <p><strong>${item.dispName}</strong> - PLU: ${item.plu}</p>
                     <p class="description">${item.dispDesc}</p>
+                    <p class="class">Class: ${item.class}</p>
                 `;
                 results.appendChild(div);
             });
@@ -101,9 +125,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-// pwa stuff //
-// do not interfere //
-// ugh //
+// installable module //
 self.addEventListener('install', event => {
     event.waitUntil(
         caches.open('plup-cache').then(cache => {
@@ -113,7 +135,6 @@ self.addEventListener('install', event => {
                 '/assets/site/styles.css',
                 '/assets/site/script.js',
                 '/assets/data/en_US.csv',
-                // Add other assets that should be cached
             ]);
         })
     );
@@ -138,5 +159,5 @@ if ('serviceWorker' in navigator) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Your existing DOMContentLoaded code here...
+    // selftest
 });

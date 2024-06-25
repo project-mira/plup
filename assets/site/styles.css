@@ -1,13 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap');
 
-/* Hamburger Icon Styles */
+
+* {
+    -webkit-tap-highlight-color: transparent;
+}
+
 .hamburger-icon {
     font-size: 1.5rem;
     cursor: pointer;
     position: absolute;
     z-index: 1000;
-    margin-left: 1.2rem;
     transition: transform 0.3s ease;
 }
 
@@ -15,12 +18,10 @@
     transform: rotate(-180deg);
 }
 
-/* Hamburger Menu Styles */
-
 .hamburger-menu {
     position: fixed;
     top: 0;
-    left: -250px;
+    left: -300px;
     width: 250px;
     height: 100%;
     background-color: white;
@@ -78,12 +79,6 @@
     align-items: center;
 }
 
-.hamburger-menu ul li a:hover {
-    background-color: #f0f0f0;
-}
-
-
-/* Overlay Styles */
 .menu-overlay {
     position: fixed;
     top: 0;
@@ -98,7 +93,6 @@
     z-index: 998;
 }
 
-/* Popup Styles */
 .popup {
     display: none;
     position: fixed;
@@ -110,12 +104,18 @@
     z-index: 1001;
     width: 80%;
     max-width: 400px;
-    border-radius: 10px;
+    border-radius: 1rem;
+    opacity: 1;
+    transition: opacity 0.15s ease;
 }
 
 .popup-content {
     padding: 1rem;
     text-align: center;
+}
+
+.popup.hidden {
+    opacity: 0;
 }
 
 .popup-logo {
@@ -138,7 +138,6 @@
     font-size: 2.5rem;
 }
 
-/* Other Styles */
 body {
     font-family: "Inter Tight", Arial, sans-serif;
     margin: 0;
@@ -153,7 +152,7 @@ header {
     background-color: #007bff;
     color: white;
     padding: 1rem;
-    width: 100%;
+    width: 92%;
     text-align: center;
     position: relative;
     z-index: 998;
@@ -166,6 +165,7 @@ header {
 }
 
 main {
+    padding: 10px;
     margin-top: 2rem;
     width: 80%;
     max-width: 600px;
@@ -192,7 +192,7 @@ main {
     border-radius: 1rem;
     background-color: white;
     padding: 1rem;
-    width: calc(50% - 2.6rem); /* Adjust width to fit two items per row */
+    width: calc(50% - 2.6rem);
     text-align: center;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     overflow: hidden;
@@ -208,6 +208,12 @@ main {
     border-radius: 5px;
 }
 
+.result-item .class {
+    font-size: 0.9rem;
+    color: #777;
+    margin-top: 0.5rem;
+}
+
 .result-item p {
     margin: 0.5rem 0;
 }
@@ -218,4 +224,100 @@ main {
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+
+#preferences-title {
+    margin: 1rem 0;
+}
+
+#preferences-content {
+    display: none;
+    padding: 10px;
+    margin: 0;
+}
+
+.preference-card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 10px;
+}
+
+.preference-card h3 {
+    font-weight: bold;
+    margin: 0;
+}
+
+.preference-card .description {
+    font-size: 12px;
+    color: #666;
+    margin-top: 0px;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 14px;
+    width: 14px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:checked + .slider:before {
+    transform: translateX(20px);
+}
+
+.slider.round {
+    border-radius: 20px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+.reset-button {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.reset-button:hover {
+    background-color: #d32f2f;
+}
+
+#preferences-content ~ header input {
+    display: none;
 }
