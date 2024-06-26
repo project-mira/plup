@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const resultPopup = document.getElementById('result-popup');
     const closeResultPopup = resultPopup.querySelector('.close-popup');
 
-    const appVersion = "v0.1.2 (dev)";
+    const appVersion = "v0.2.0 (dev)";
 
     document.querySelector('.version').textContent = appVersion;
 
@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function showMainContent() {
         mainContent.style.display = 'block';
         preferencesContent.style.display = 'none';
-        searchInput.style.display = 'block';
+        searchInput.style.display = 'inline';
     }
 
     function showPreferencesContent() {
@@ -130,9 +130,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 div.innerHTML = `
                     <img src="${imgPath}" onerror="this.onerror=null; this.src='images/notfound.jpg'" alt="${item.dispName}">
                     <p><strong>${item.dispName}</strong></p>
-                    <p class="plu">PLU ${item.plu}</p>
+                    <p class="plu">PLU ${item.plu} &nbsp;·&nbsp; ${item.class}</p>
                     <p class="description">${item.dispDesc}</p>
-                    <p class="class">${item.class}</p>
                 `;
                 div.addEventListener('click', () => showResultPopup(item));
                 results.appendChild(div);
@@ -147,7 +146,13 @@ document.addEventListener('DOMContentLoaded', () => {
         resultPopup.querySelector('.popup-produce-plu').textContent = `PLU ${item.plu}`;
         resultPopup.querySelector('.popup-produce-class').textContent = item.class;
         resultPopup.querySelector('.popup-produce-description').textContent = item.dispDesc;
-        resultPopup.querySelector('.popup-barcode-image').src = `https://barcodeapi.org/api/128/${item.plu}`;
+        JsBarcode(".popup-barcode-image", `${item.plu}`, {
+            format: "code128",
+            lineColor: "#000000",
+            width:5,
+            height:150,
+            displayValue: false
+        });
 
         menuOverlay.style.opacity = '1';
         menuOverlay.style.visibility = 'visible';

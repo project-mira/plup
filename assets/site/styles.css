@@ -1,6 +1,74 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap');
 
+@media (prefers-color-scheme: light) {
+    :root {
+        color-scheme: light;
+
+        --color-background: #fff;
+        --color-background-alt: #f8f9fa;
+        --color-accent: #fff;
+        --color-shadow: rgba(0, 0, 0, 0.5);
+        --color-border: #ddd;
+        --color-highlight: #aaa;
+        --color-text: #000;
+        --color-header-bg: #007bff;
+        --color-header-text: #fff;
+        --color-search-bg: #fff;
+        --color-result-bg: #fff;
+        --color-result-border: #ddd;
+        --color-result-shadow: rgba(0, 0, 0, 0.1);
+        --color-result-class: #777;
+        --color-preference-border: #ccc;
+        --color-preference-text: #666;
+        --color-switch-bg: #ccc;
+        --color-switch-checked-bg: #2196F3;
+        --color-switch-knob-bg: #fff;
+        --color-reset-bg: #f44336;
+        --color-reset-hover-bg: #d32f2f;
+        --color-popup-shadow: rgba(0, 0, 0, 0.3);
+        --color-popup-border: #ddd;
+        --color-popup-highlight: #aaa;
+        --color-version-text: #666;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        color-scheme: dark;
+        
+        --color-background: #000;
+        --color-background-alt: #070809;
+        --color-accent: #222;
+        --color-shadow: rgba(0, 0, 0, 0.5);
+        --color-border: #555;
+        --color-highlight: #555;
+        --color-text: #fff;
+        --color-text-alt: #ddd;
+        --color-header-bg: #222;
+        --color-header-text: #000;
+        --color-search-bg: #000;
+        --color-result-bg: #222;
+        --color-result-border: #222;
+        --color-result-shadow: rgba(0, 0, 0, 0.1);
+        --color-result-class: #888;
+        --color-preference-border: #333;
+        --color-preference-text: #999;
+        --color-switch-bg: #333;
+        --color-switch-checked-bg: #de68e0;
+        --color-switch-knob-bg: #000;
+        --color-reset-bg: #f44336;
+        --color-reset-hover-bg: #2cc8d6;
+        --color-popup-shadow: rgba(0, 0, 0, 0.3);
+        --color-popup-border: #222;
+        --color-popup-highlight: #555;
+        --color-version-text: #999;
+    }
+
+    #about-popup .popup-content img {
+        filter:invert(1);
+    }
+}
 
 * {
     -webkit-tap-highlight-color: transparent;
@@ -8,10 +76,13 @@
 
 .hamburger-icon {
     font-size: 1.5rem;
+    line-height: 0;
+    padding: 10px 5px;
     cursor: pointer;
     position: absolute;
     z-index: 1000;
     transition: transform 0.3s ease;
+    color: var(--color-text);
 }
 
 .hamburger-icon.open {
@@ -24,8 +95,8 @@
     left: -300px;
     width: 250px;
     height: 100%;
-    background-color: white;
-    box-shadow: 2px 0 5px rgba(0,0,0,0.5);
+    background-color: var(--color-accent);
+    box-shadow: 2px 0 5px var(--color-shadow);
     border-radius: 0 20px 0 0;
     transition: left 0.3s ease;
     z-index: 999;
@@ -58,23 +129,24 @@
 
 .hamburger-menu ul li {
     padding: 1rem;
+    position: relative;
 }
 
 .hamburger-menu ul li::after {
-    background-color: #ddd;
+    background-color: var(--color-border);
     content: '';
     display: block;
     height: 1px;
     left: 50%;
     position: absolute;
-    transform: translate(-50%,0);
+    transform: translate(-50%, 0);
     width: 85%;
     margin-top: 1rem;
 }
 
 .hamburger-menu ul li a {
     text-decoration: none;
-    color: black;
+    color: var(--color-text-alt);
     display: flex;
     align-items: center;
 }
@@ -85,8 +157,8 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(2px);
+    background-color: var(--color-shadow);
+    backdrop-filter: blur(6px);
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s ease;
@@ -99,8 +171,8 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: white;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    background-color: var(--color-accent);
+    box-shadow: 0 5px 15px var(--color-popup-shadow);
     z-index: 1001;
     width: 80%;
     max-width: 400px;
@@ -114,6 +186,10 @@
     text-align: center;
 }
 
+#about-popup .popup-content p {
+    font-size: .75rem;
+}
+
 .popup.hidden {
     opacity: 0;
 }
@@ -124,7 +200,7 @@
 
 .version {
     font-size: 0.6rem;
-    color: #666;
+    color: var(--color-version-text);
     margin-bottom: 1rem;
     margin-top: 0;
 }
@@ -135,7 +211,7 @@
     right: 10px;
     cursor: pointer;
     line-height: 0;
-    font-size: 2.5rem;
+    font-size: 2rem;
 }
 
 body {
@@ -145,18 +221,22 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #f8f9fa;
+    background-color: var(--color-background-alt);
 }
 
 header {
-    background-color: #007bff;
-    color: white;
+    background-color: var(--color-header-bg);
+    color: var(--color-header-text);
     padding: 1rem;
     width: calc(100% - 1rem);
     text-align: center;
     position: relative;
     z-index: 998;
     overflow: hidden;
+    position: sticky;
+    right: 0;
+    left: 0;
+    top: 0;
 }
 
 #logo {
@@ -174,12 +254,15 @@ main {
 
 #searchInput {
     margin: 1rem 0 0 0;
-    width: 90%;
+    width: 85%;
     padding: 0.5rem;
     font-size: 1rem;
     border-radius: 1rem;
-    background: #fff;
+    background: var(--color-search-bg);
     font-family: "Inter Tight", Arial, sans-serif;
+    text-align: center;
+    border: none;
+    outline: none;
 }
 
 #results {
@@ -190,13 +273,13 @@ main {
 }
 
 .result-item {
-    border: 1px solid #ddd;
+    border: 1px solid var(--color-result-border);
     border-radius: 1rem;
-    background-color: white;
+    background-color: var(--color-result-bg);
     padding: 1rem;
     width: calc(50% - 3rem);
     text-align: center;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 8px var(--color-result-shadow);
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -210,14 +293,13 @@ main {
     border-radius: .75rem;
 }
 
-
 .result-item img[src*="images/notfound.jpg"] {
-    border: 1.5px solid #aaa;
+    border: 1.5px solid var(--color-highlight);
 }
 
 .result-item .class {
     font-size: 0.9rem;
-    color: #777;
+    color: var(--color-result-class);
     margin-top: 0.5rem;
 }
 
@@ -226,7 +308,7 @@ main {
     margin: 0;
     font-size: 0.75rem;
     line-height: 1;
-    color: #777;
+    color: var(--color-result-class);
 }
 
 .result-item p {
@@ -237,8 +319,12 @@ main {
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
+    font-size: 0.75rem;
+    line-height: .85;
+    color: var(--color-result-class);
     overflow: hidden;
     text-overflow: ellipsis;
+    text-align: justify;
 }
 
 #preferences-title {
@@ -252,10 +338,27 @@ main {
 }
 
 .preference-card {
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    border: 1px solid var(--color-preference-border);
+    background-color: var(--color-accent);
+    border-radius: 1.25rem;
     padding: 15px;
     margin-bottom: 10px;
+}
+
+#theme-toggle {
+    border: none;
+    padding: 5px;
+    border-radius: .5rem;
+    outline: none;
+    font-family: "Inter Tight", Arial, sans-serif;
+}
+
+#results-per-page {
+    border: none;
+    padding: 5px;
+    border-radius: .5rem;
+    outline: none;
+    font-family: "Inter Tight", Arial, sans-serif;
 }
 
 .preference-card h3 {
@@ -265,72 +368,23 @@ main {
 
 .preference-card .description {
     font-size: 12px;
-    color: #666;
+    color: var(--color-preference-text);
     margin-top: 0px;
 }
 
-.switch {
-    position: relative;
-    display: inline-block;
-    width: 40px;
-    height: 20px;
-}
-
-.switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-}
-
-.slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ccc;
-    transition: .4s;
-}
-
-.slider:before {
-    position: absolute;
-    content: "";
-    height: 14px;
-    width: 14px;
-    left: 3px;
-    bottom: 3px;
-    background-color: white;
-    transition: .4s;
-}
-
-input:checked + .slider {
-    background-color: #2196F3;
-}
-
-input:checked + .slider:before {
-    transform: translateX(20px);
-}
-
-.slider.round {
-    border-radius: 20px;
-}
-
-.slider.round:before {
-    border-radius: 50%;
-}
-
 .reset-button {
-    background-color: #f44336;
-    color: white;
+    font-family: "Inter Tight", Arial, sans-serif;
+    background-color: var(--color-reset-bg);
+    color: var(--color-text);
     border: none;
-    padding: 10px;
-    border-radius: 5px;
+    padding: 5px;
+    border-radius: .5rem;
+    outline: none;
     cursor: pointer;
 }
 
 .reset-button:hover {
-    background-color: #d32f2f;
+    background-color: var(--color-reset-hover-bg);
 }
 
 #preferences-content ~ header input {
@@ -356,55 +410,38 @@ input:checked + .slider:before {
 }
 
 .popup-produce-name {
-    font-size: 1.2rem;
+    font-size: 1.25rem;
+    font-weight: 700;
     margin: 0;
 }
 
 .popup-produce-plu {
-    font-size: 1rem;
-    color: #777;
+    font-size: .9rem;
+    color: var(--color-result-class);
     margin: 0.5rem 0;
 }
 
 .popup-produce-class {
-    font-size: 1rem;
-    color: #777;
+    font-size: 1.1rem;
+    color: var(--color-result-class);
 }
 
 .popup-produce-description {
-    margin: 1rem 0;
+    margin: .5rem 0;
+    font-size: .85rem;
 }
 
 .popup-barcode-image {
     margin-top: 1rem;
-    border: 1px solid #ddd;
+    border: 1px solid var(--color-popup-border);
     border-radius: 0.75rem;
-    width: 143px;
-    height: 109px;
+    width: auto;
+    max-height: 100px;
+    object-fit: fill;
     overflow: hidden;
     position: relative;
 }
 
-.popup.hidden {
-    opacity: 0;
-}
-
-.popup-logo {
-    width: 100px;
-}
-
-.version {
-    font-size: 0.6rem;
-    color: #666;
-    margin-bottom: 1rem;
-    margin-top: 0;
-}
-
-.close {
-    position: absolute;
-    top: 25px;
-    right: 10px;
-    cursor: pointer;
-    line-height: 0;
-    font-size: 2.5rem;
+.popup-header img[src*="images/notfound.jpg"] {
+    border: 1.5px solid var(--color-popup-highlight);
 }
