@@ -1,0 +1,119 @@
+plu,searchName,method,dispName,dispDesc,class,keywords
+3507,"Apples, Cosmic",/LB,"Cosmic Apple","A sweet and crisp apple with bright and attractive red skin.","Fruit","round, sweet, bright, small, red",
+3616,"Apples, Envy",/LB,"Envy Apple","A premium apple known for its sweetness and crisp texture. Bright red skin with white flesh.","Fruit","round, sweet, premium, small, red",
+4131,"Apples, Fuji",/LB,"Fuji Apple","A very sweet and crisp apple with dense flesh. Large and round, usually red with yellow undertones.","Fruit","round, sweet, dense, large, red",
+4135,"Apples, Gala",/LB,"Gala Apple","A small to medium-sized apple with a sweet taste and thin skin. Yellow-orange skin with red striping.","Fruit","round, sweet, thin, medium, orange",
+4017,"Apples, Granny Smith",/LB,"Granny Smith Apple","A tart, green apple with a firm texture. Bright green skin, often used in baking.","Fruit","round, tart, firm, medium, green",
+3283,"Apples, Honey Crisp",/LB,"Honeycrisp Apple","A highly popular apple known for its juicy and crisp texture. Red and yellow skin, very sweet.","Fruit","round, crisp, juicy, medium, red",
+4130,"Apples, Pink Lady",/LB,"Pink Lady Apple","A pink-skinned apple with a sweet and tart flavor. Good for snacking and baking.","Fruit","round, sweet, tart, medium, pink",
+4016,"Apples, Red Delicious",/LB,"Red Delicious Apple","A classic sweet and juicy apple with a red skin. Medium size, great for fresh eating.","Fruit","round, sweet, juicy, medium, red",
+3486,"Apples, Sugar Bee",/LB,"Sugar Bee Apple","A sweet and juicy apple with a crisp texture. Red and yellow skin, perfect for snacking.","Fruit","round, sweet, crisp, medium, red",
+3603,"Apples, Sweet Tango",/LB,"Sweet Tango Apple","A sweet and tangy apple with a crisp texture. Red skin with yellow undertones, great for snacking.","Fruit","round, sweet, tangy, medium, red",
+94011,"Bananas, Organic",/LB,"Organic Banana","An organic, yellow banana, perfect for snacking or baking. Soft texture and easy to peel.","Fruit","long, sweet, yellow, organic, soft",
+4011,"Bananas, Yellow",/LB,"Banana","A sweet, yellow banana, perfect for snacking or baking. Soft texture and easy to peel.","Fruit","long, sweet, yellow, soft, peel",
+4255,"Cactus Pears",/LB,"Pear Cactus","A prickly fruit with a sweet, juicy flesh. Often used in desserts.","Fruit","prickly, sweet, juicy, red, green",
+4258,"Cherries, Rainier",/LB,"Rainier Cherries","A yellow-red cherry with a sweet flavor, great for snacking. Firm texture and juicy flesh.","Fruit","round, sweet, firm, yellow, red",
+4045,"Cherries, Red",/LB,"Red Cherries","A small, red cherry with a sweet-tart flavor, great for snacking or baking. Firm texture and juicy flesh.","Fruit","round, sweet, tart, small, red",
+4261,"Coconuts",/EA,"Coconut","A large, brown fruit with a hard shell, filled with sweet water and white flesh. Often used in desserts and beverages.","Fruit","large, hard, brown, sweet, white",
+3040,"Dragonfruits",/LB,"Dragon Fruit","A vibrant, exotic fruit with sweet, mildly tart flesh. Bright pink skin with white or red speckled flesh.","Fruit","vibrant, exotic, pink, white, red",
+4282,"Grapefruits, Red",/EA,"Red Grapefruit","A grapefruit with red flesh and a sweet-tart flavor. Thick skin, great for juicing.","Fruit","round, tart, sweet, red, juicy",
+4056,"Grapes, Black Seedless",/LB,"Black Seedless Grapes","Small, black grapes with a sweet flavor. Firm texture, perfect for snacking.","Fruit","small, sweet, black, firm, seedless",
+4022,"Grapes, Green Seedless",/LB,"Green Seedless Grapes","Small, green grapes with a sweet-tart flavor. Firm texture, perfect for snacking.","Fruit","small, sweet, tart, green, seedless",
+4636,"Grapes, Red Seeded",/LB,"Red Seeded Grapes","Small, seeded red grapes with a sweet flavor. Firm texture, perfect for snacking.","Fruit","small, sweet, red, firm, seeded",
+4023,"Grapes, Red Seedless",/LB,"Red Seedless Grapes","Small, seedless red grapes with a sweet flavor. Firm texture, perfect for snacking.","Fruit","small, sweet, red, firm, seedless",
+4626,"Jicamas",/LB,"Jicama","A crunchy, white root vegetable with a mild, sweet flavor. Brown skin with white flesh, great for salads.","Fruit","crunchy, mild, white, brown, salad",
+4030,"Kiwis",/EA,"Kiwi","A small, brown fruit with a tangy green flesh. Fuzzy skin, great for snacking.","Fruit","small, tangy, green, brown, fuzzy",
+4053,"Lemons",/EA,"Lemon","A yellow citrus fruit with a tangy flavor. Often used in cooking and beverages, bright yellow skin.","Fruit","round, tangy, yellow, citrus, peel",
+4048,"Limes",/EA,"Lime","A green citrus fruit with a tangy flavor. Often used in cooking and beverages.","Fruit","round, tangy, green, citrus, peel",
+4051,"Mangoes, Red",/EA,"Red Mango","A large, red mango with juicy flesh.","Fruit","large, juicy, red, tropical, smooth",
+4312,"Mangoes, Yellow",/EA,"Yellow Mango","A small, yellow mango with juicy flesh.","Fruit","small, juicy, yellow, tropical, smooth",
+4050,"Melons, Cantaloupe",/EA,"Cantaloupe","A round melon with orange, sweet flesh, great for snacking.","Fruit","round, sweet, orange, juicy, firm",
+3100,"Melons, Goldendew",/EA,"Goldendew Melon","A golden honeydew melon with sweet, juicy flesh.","Fruit","round, sweet, golden, juicy, firm",
+4329,"Melons, Honeydew",/EA,"Honeydew Melon","A honeydew melon with sweet, orange flesh.","Fruit","round, sweet, orange, juicy, firm",
+3035,"Nectarines, White",/LB,"White Nectarine","A white-fleshed nectarine with a sweet, juicy flavor.","Fruit","round, sweet, white, juicy, smooth",
+4036,"Nectarine, Yellow",/LB,"Yellow Nectarine","A yellow-fleshed nectarine with a sweet, juicy flavor.","Fruit","round, sweet, yellow, juicy, smooth",
+3107,"Oranges, Navel",/EA,"Navel Orange","A sweet, juicy citrus fruit with orange skin. Great for snacking and juicing.","Fruit","round, sweet, orange, juicy, peel",
+3112,"Papayas",/LB,"Papaya","A tropical fruit with sweet, orange flesh. Large and oval-shaped, great for snacking or adding to salads.","Fruit","large, sweet, orange, tropical, soft",
+4401,"Peaches, White",/EA,"White Peach","A white-fleshed peach with a sweet, juicy flavor.","Fruit","round, sweet, white, juicy, fuzzy",
+4038,"Watermelon, Seedless",/LB,"Yellow Peach","A yellow-fleshed peach with a sweet, juicy flavor.","Fruit","round, sweet, yellow, juicy, fuzzy",
+4416,"Pears, Anjou",/LB,"Anjou Pear","A green pear with a sweet, juicy flavor. Great for snacking.","Fruit","round, sweet, green, juicy, firm",
+4409,"Pears, Bartlett",/LB,"Bartlett Pear","A green or yellow pear with a sweet, juicy flavor. Great for snacking.","Fruit","round, sweet, green, yellow, juicy",
+4413,"Pears, Bosc",/LB,"Bosc Pear","A brown-skinned pear with a sweet, slightly spicy flavor. Great for baking.","Fruit","round, sweet, brown, spicy, firm",
+4415,"Pears, Red",/LB,"Red Pear","A red-skinned pear with a sweet, juicy flavor. Great for snacking.","Fruit","round, sweet, red, juicy, firm",
+4430,"Pineapples",/EA,"Pineapple","A tropical fruit with sweet, juicy flesh. Great for snacking and cooking.","Fruit","tropical, sweet, juicy, yellow, spiky",
+4235,"Plantains",/EA,"Plantains","A starchy, green banana often used in cooking. Firm texture, typically fried or baked.","Fruit","starchy, green, firm, cooking, banana",
+4040,"Plums",/LB,"Plum","A small, dark-skinned plum with sweet, juicy flesh.","Fruit","round, sweet, dark, juicy, small",
+3127,"Pomegranates",/EA,"Pomegranate","A large fruit with sweet-tart seeds. Often used in salads and cooking.","Fruit","large, sweet, tart, red, seeds",
+4480,"Pumpkins, Autumn Colors",/EA,"Autumn Pumpkin","A decorative pumpkin with vibrant autumn colors. Perfect for fall decorations and displays.","Fruit","decorative, colorful, orange, yellow, fall",
+4735,"Pumpkins, Carving",/EA,"Carving Pumpkin","A large, orange pumpkin perfect for carving. Thick shell and hollow interior.","Fruit","large, orange, carving, hollow, thick",
+3130,"Pumpkins, Jumbo",/LB,"Jumbo Pumpkin","An extra-large pumpkin with a firm texture. Great for fall decorations and large displays.","Fruit","large, firm, orange, decoration, display",
+3134,"Pumpkins, Pie",/EA,"Pie Pumpkin","A small, sweet pumpkin ideal for baking pies. Smooth texture and rich flavor.","Fruit","small, sweet, smooth, baking, orange",
+3132,"Pumpkins, White ",/EA,"White Pumpkin","A white-skinned pumpkin with a firm texture. Unique color makes it perfect for elegant fall decorations.","Fruit","white, firm, decorative, elegant, fall",
+3129,"Pummelos",/EA,"Pummelo","A large grapefruit with thick skin and sweet, juicy flesh. Often pale yellow or green skin.","Fruit","large, thick, pomelo, yellow, green",
+4256,"Starfruits",/LB,"Starfruit","A yellow tropical fruit with a sweet-tart flavor and star-shaped cross-section.","Fruit","yellow, sweet, tart, tropical, star",
+4055,"Tangerines",/EA,"Tangerine","A small, sweet citrus fruit with easy-to-peel skin. Great for snacking.","Fruit","small, sweet, citrus, easy-to-peel, orange",
+3421,"Watermelons, Personal",/EA,"Personal Watermelon","A small, round watermelon with sweet, juicy flesh.","Fruit","small, round, sweet, juicy, green",
+4031,"Watermelons, Seeded",/EA,"Seeded Watermelon","A large watermelon with seeds and sweet, juicy flesh.","Fruit","large, seeded, sweet, juicy, green",
+4032,"Watermelons, Seedless",/EA,"Seedless Watermelon","A large watermelon without seeds and sweet, juicy flesh.","Fruit","large, seedless, sweet, juicy, green",
+3064,"Aloe Veras",/EA,"Aloe Vera","A succulent plant with thick, fleshy leaves that contain soothing gel. Often used for medicinal purposes.","Vegetable","succulent, fleshy, medicinal, soothing, green"
+4084,"Artichokes",/EA,"Artichoke","A large, green vegetable with a tender heart and edible leaves. Often steamed or boiled.","Vegetable","large, green, tender, steamed, boiled"
+4080,"Asparagus, Bunch",/EA,"Asparagus","A bundle of tender green stalks with a delicate flavor. Great for steaming, grilling, or roasting.","Vegetable","tender, green, stalks, delicate, steamed"
+4046,"Avocadoes, Haas",/EA,"Haas Avocado","A creamy, rich avocado with dark, pebbly skin. Great for guacamole and salads.","Vegetable","creamy, rich, dark, pebbly, guacamole"
+4223,"Avocadoes, Tropical",/EA,"Tropical Avocado","A larger, smooth-skinned avocado with a mild flavor. Perfect for slicing and salads.","Vegetable","large, smooth, mild, slicing, tropical"
+4539,"Beets, Bunch",/EA,"Beets","A bunch of red or golden root vegetables with a sweet, earthy flavor. Often used in salads or roasted.","Vegetable","red, golden, sweet, earthy, root"
+4545,"Bok Choys",/EA,"Bok Choy","A crunchy, leafy green vegetable with a mild flavor. Often used in Asian cooking.","Vegetable","crunchy, leafy, green, mild, Asian"
+3082,"Broccoli, Crowns",/EA,"Broccoli","A green vegetable with dense, edible flower heads. Often steamed or sautéed.","Vegetable","green, dense, edible, flower, steamed"
+4069,"Cabbages, Green",/LB,"Green Cabbage","A leafy green vegetable with a dense head. Often used in salads or coleslaw.","Vegetable","leafy, green, dense, salads, coleslaw"
+4552,"Cabbages, Napa",/EA,"Napa Cabbage","A light green cabbage with a mild flavor. Often used in Asian dishes.","Vegetable","light, green, mild, Asian, cabbage"
+4554,"Cabbages, Red",/LB,"Red Cabbage","A red or purple cabbage with a slightly sweet flavor. Often used in salads or coleslaw.","Vegetable","red, purple, sweet, salads, coleslaw"
+4558,"Cactuses, Leaf",/LB,"Cactus Leaf","A flat, green leaf from the cactus plant. Often used in Mexican cooking.","Vegetable","flat, green, cactus, Mexican, leaf"
+4079,"Cauliflowers, White",/EA,"Cauliflower","A white, dense vegetable with a mild flavor. Often roasted or used in soups.","Vegetable","white, dense, mild, roasted, soups"
+4889,"Cilantro, Bunch",/EA,"Cilantro","A fresh herb with a bright, citrusy flavor. Often used in Mexican and Asian dishes.","Vegetable","fresh, herb, bright, citrusy, Mexican"
+4078,"Corn, Bulk",/EA,"Corn","A yellow vegetable with sweet kernels. Often grilled or boiled.","Vegetable","yellow, sweet, kernels, grilled, boiled"
+4062,"Cucumbers",/EA,"Cucumber","A long, green vegetable with a crisp texture. Often used in salads.","Vegetable","long, green, crisp, salads, fresh"
+3089,"Eggplants, Asian",/EA,"Asian Eggplant","A long, slender eggplant with a tender texture. Often used in Asian dishes.","Vegetable","long, slender, tender, Asian, eggplant"
+4081,"Eggplants, Purple",/LB,"Purple Eggplant","A large, purple vegetable with a spongy texture. Often used in Italian dishes.","Vegetable","large, purple, spongy, Italian, eggplant"
+4611,"Garlic",/LB,"Garlic","A pungent bulb used to flavor dishes. Often used in cooking.","Vegetable","pungent, bulb, flavor, cooking, spice"
+4066,"Green Beans",/LB,"Green Beans","A green vegetable with a crisp texture. Often used in salads or steamed.","Vegetable","green, crisp, salads, steamed, fresh"
+4659,"Green Onions, BBQ",/EA,"Green Onions","A long, green vegetable with a mild flavor. Often used in cooking.","Vegetable","long, green, mild, cooking, fresh"
+4068,"Green Onions, Scallions",/EA,"Scallions","A long, green vegetable with a mild flavor. Often used in salads or cooking.","Vegetable","long, green, mild, salads, cooking"
+4614,"Greens, Collard",/EA,"Collard Greens","A leafy green vegetable with a slightly bitter flavor. Often used in Southern cooking.","Vegetable","leafy, green, bitter, Southern, cooking"
+4627,"Greens, Kale",/EA,"Kale Greens","A leafy green vegetable with a slightly bitter flavor. Often used in salads or smoothies.","Vegetable","leafy, green, bitter, salads, smoothies"
+4616,"Greens, Mustard",/EA,"Mustard Greens","A leafy green vegetable with a peppery flavor. Often used in Southern cooking.","Vegetable","leafy, green, peppery, Southern, cooking"
+4619,"Greens, Turnip",/EA,"Turnip Greens","A leafy green vegetable with a slightly bitter flavor. Often used in Southern cooking.","Vegetable","leafy, green, bitter, Southern, cooking"
+4629,"Leeks",/EA,"Leeks","A long, green vegetable with a mild onion flavor. Often used in soups.","Vegetable","long, green, mild, onion, soups"
+4656,"Okras, Asian",/LB,"Okra","A green vegetable with a mild flavor. Often used in soups or stews.","Vegetable","green, mild, soups, stews, fresh"
+4082,"Onions, Red",/LB,"Red Onions","A red onion with a mild flavor. Often used in salads or cooking.","Vegetable","red, mild, salads, cooking, onion"
+4166,"Onions, Sweet",/LB,"Sweet Onions","A sweet onion with a mild flavor. Often used in salads or cooking.","Vegetable","sweet, mild, salads, cooking, onion"
+4663,"Onions, White",/LB,"White Onions","A white onion with a mild flavor. Often used in salads or cooking.","Vegetable","white, mild, salads, cooking, onion"
+4093,"Onions, Yellow",/LB,"Yellow Onions","A yellow onion with a strong flavor. Often used in cooking.","Vegetable","yellow, strong, cooking, onion, pungent"
+4899,"Parsleys, Curly",/EA,"Curly Parsley","A fresh herb with curly leaves and a bright flavor. Often used as a garnish.","Vegetable","fresh, curly, herb, bright, garnish"
+4901,"Parsleys, Italian",/EA,"Italian Parsley","A fresh herb with flat leaves and a bright flavor. Often used in cooking.","Vegetable","fresh, flat, herb, bright, cooking"
+4065,"Peppers, Bell Green",/EA,"Green Bell Peppers","A large, green pepper with a mild flavor. Often used in salads or cooking.","Vegetable","large, green, mild, salads, cooking"
+3121,"Peppers, Bell Orange",/EA,"Orange Bell Peppers","A large, orange pepper with a sweet flavor. Often used in salads or cooking.","Vegetable","large, orange, sweet, salads, cooking"
+4688,"Peppers, Bell Red",/EA,"Red Bell Peppers","A large, red pepper with a sweet flavor. Often used in salads or cooking.","Vegetable","large, red, sweet, salads, cooking"
+4680,"Peppers, Bell Yellow",/EA,"Yellow Bell Peppers","A large, yellow pepper with a sweet flavor. Often used in salads or cooking.","Vegetable","large, yellow, sweet, salads, cooking"
+4693,"Peppers, Jalapeno",/LB,"Jalapeño Peppers","A small, green pepper with a spicy flavor. Often used in Mexican cooking.","Vegetable","small, green, spicy, Mexican, pepper"
+4073,"Potatoes, Red",/LB,"Red Potatoes","A small, red potato with a firm texture. Often used in salads or roasted.","Vegetable","small, red, firm, salads, roasted"
+4072,"Potatoes, Russet",/LB,"Russet Potatoes","A large, brown potato with a starchy texture. Often used in baking or mashing.","Vegetable","large, brown, starchy, baking, mashing"
+4074,"Potatoes, Sweet",/LB,"Sweet Potatoes","A large, orange potato with a sweet flavor. Often used in baking or roasting.","Vegetable","large, orange, sweet, baking, roasting"
+4089,"Radishes",/EA,"Radish","A small, red root vegetable with a peppery flavor. Often used in salads.","Vegetable","small, red, peppery, salads, root"
+4745,"Rhubarbs",/EA,"Rhubarb","A long, red vegetable with a tart flavor. Often used in pies and desserts.","Vegetable","long, red, tart, pies, desserts"
+4546,"Roots, Boniato",/LB,"Boniato Roots","A starchy root vegetable with a sweet flavor. Often used in Latin American cooking.","Vegetable","boniato, latin, batata, root, cooking"
+4612,"Roots, Ginger",/LB,"Ginger Root","A spicy, fragrant root often used in Asian cooking and baking.","Vegetable","spicy, fragrant, Asian, root, cooking"
+4644,"Roots, Malanga",/LB,"Malanga Root","A starchy root vegetable with a nutty flavor. Often used in Caribbean cooking.","Vegetable","starchy, nutty, Caribbean, root, cooking"
+3276,"Roots, Name Yam",/LB,"Yam Root","A starchy root vegetable with a sweet flavor. Often used in African and Caribbean cooking.","Vegetable","starchy, sweet, African, Caribbean, root"
+4747,"Roots, Rutabaga",/EA,"Rutabaga Root","A large root vegetable with a sweet, earthy flavor. Often used in stews and soups.","Vegetable","large, sweet, earthy, stews, soups"
+4794,"Roots, Taro",/LB,"Taro Root","A starchy root vegetable with a slightly sweet flavor. Often used in Asian and Pacific Island cooking.","Vegetable","starchy, sweet, Asian, Pacific Island, root"
+4819,"Roots, Yuca",/LB,"Yuca Root","A starchy root vegetable with a mild flavor. Often used in Latin American cooking.","Vegetable","starchy, mild, yucca, root, cooking"
+4750,"Squashes, Acorn",/LB,"Acorn Squash","A small, green squash with a sweet, nutty flavor. Often baked or roasted.","Vegetable","small, green, sweet, nutty, baked"
+4759,"Squashes, Butternut",/LB,"Butternut Squash","A large, tan squash with a sweet, nutty flavor. Often used in soups and roasting.","Vegetable","large, tan, sweet, nutty, soups"
+4788,"Squashes, Calabacita",/LB,"Calabacita Squash","A small, green squash with a tender texture. Often used in Mexican cooking.","Vegetable","small, green, tender, Mexican, squash"
+4761,"Squashes, Chayote",/EA,"Chayote Squash","A green, pear-shaped squash with a mild flavor. Often used in Latin American cooking.","Vegetable","green, pear-shaped, mild, Latin American, squash"
+4776,"Squashes, Spaghetti",/LB,"Spaghetti Squash","A large, yellow squash with stringy flesh. Often used as a pasta substitute.","Vegetable","large, yellow, stringy, pasta, substitute"
+4086,"Squashes, Yellow",/LB,"Yellow Squash","A yellow summer squash with a tender texture. Often used in salads or sautéed.","Vegetable","yellow, summer, tender, salads, sautéed"
+4067,"Squashes, Zucchini",/LB,"Zucchini Squash","A green summer squash with a tender texture. Often used in salads or sautéed.","Vegetable","green, summer, tender, salads, sautéed"
+4801,"Tomatillos",/LB,"Tomatillo","A small, green fruit with a tart flavor. Often used in Mexican cooking.","Vegetable","small, green, tart, Mexican, fruit"
+4664,"Tomatoes, On the Vine",/LB,"On the Vine Tomatoes","A red tomato with a sweet flavor. Often used in salads or cooking.","Vegetable","red, sweet, salads, cooking, tomato"
+4087,"Tomatoes, Roma",/LB,"Roma Tomato","A small, red tomato with a firm texture. Often used in sauces and cooking.","Vegetable","small, red, firm, sauces, cooking"
+3151,"Tomatoes, Slicing",/LB,"Slicing Tomato","A large, red tomato with a juicy texture. Often used in sandwiches and salads.","Vegetable","large, red, juicy, sandwiches, salads"

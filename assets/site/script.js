@@ -12,8 +12,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const header = document.querySelector('header');
     const resultPopup = document.getElementById('result-popup');
     const closeResultPopup = resultPopup.querySelector('.close-popup');
+    const resetPreferencesButton = document.getElementById('reset-preferences');
+    const confirmationPopup = document.getElementById('confirmation-popup');
+    const cancelButton = document.getElementById('cancel-button');
+    const resetButton = document.getElementById('reset-button');
 
-    const appVersion = "v0.2.0 (dev)";
+    const appVersion = "v0.3.0 (dev)";
 
     document.querySelector('.version').textContent = appVersion;
 
@@ -58,10 +62,6 @@ document.addEventListener('DOMContentLoaded', () => {
         closeMenu();
     });
 
-    document.getElementById('licenses-link').addEventListener('click', () => {
-        alert('Not implemented\n\nConsult docs for more information');
-    });
-
     document.getElementById('about-link').addEventListener('click', () => {
         aboutPopup.style.display = 'block';
         closeMenu(true);
@@ -70,6 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function closeMenu(keepOverlay = false) {
         hamburgerMenu.style.left = '-300px';
         if (!keepOverlay) {
+            menuOverlay.classList.toggle('invisible');
             menuOverlay.style.opacity = '0';
             menuOverlay.style.visibility = 'hidden';
         }
@@ -87,11 +88,20 @@ document.addEventListener('DOMContentLoaded', () => {
         searchInput.style.display = 'none';
     }
 
-    fetch('assets/data/en_US.csv')
+    fetch('assets/data/default_enUS.csv')
         .then(response => response.text())
         .then(data => {
             const produceData = parseCSV(data);
+            console.log(`\n%cPlup Core ${appVersion} 🟢`, 'color:#007bff; background:#202020; font-size:1.5rem; padding:0.15rem 0.25rem; margin: .5rem auto; font-family: Arial; border: 2px solid #007bff; border-radius: 4px;font-weight: bold; text-shadow: 1px 1px 1px #00af87bf;');
+            console.log("[Plup Core] Produce CSV Data Parsing Success")
             console.log(produceData);
+                const query = searchInput.value.toLowerCase();
+                const filteredData = produceData.filter(item => {
+                    return (item.searchName && item.searchName.toLowerCase().includes(query)) ||
+                           (item.plu && item.plu.includes(query)) ||
+                           (item.keywords && item.keywords.toLowerCase().includes(query));
+                });
+                displayResults(filteredData);
 
             searchInput.addEventListener('input', () => {
                 const query = searchInput.value.toLowerCase();
@@ -128,13 +138,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 div.classList.add('result-item');
                 const imgPath = `assets/img/produce/${item.plu}.jpg`;
                 div.innerHTML = `
-                    <img src="${imgPath}" onerror="this.onerror=null; this.src='images/notfound.jpg'" alt="${item.dispName}">
+                    <div class="image-container">
+                        <img src="${imgPath}" onerror="this.onerror=null; this.src='assets/img/produce/none.jpg'" alt="${item.dispName}">
+                    </div>
                     <p><strong>${item.dispName}</strong></p>
-                    <p class="plu">PLU ${item.plu} &nbsp;·&nbsp; ${item.class}</p>
+                    <p class="plu">PLU ${item.plu} &nbsp;·&nbsp; ${item.class} &nbsp;·&nbsp; ${item.method.replace('/', '')}</p>
                     <p class="description">${item.dispDesc}</p>
                 `;
                 div.addEventListener('click', () => showResultPopup(item));
-                results.appendChild(div);
+                document.getElementById('results').appendChild(div);
             });
         }
     }
@@ -144,13 +156,15 @@ document.addEventListener('DOMContentLoaded', () => {
         resultPopup.querySelector('.popup-produce-image').onerror = function() { this.onerror=null; this.src='images/notfound.jpg'; };
         resultPopup.querySelector('.popup-produce-name').textContent = item.dispName;
         resultPopup.querySelector('.popup-produce-plu').textContent = `PLU ${item.plu}`;
-        resultPopup.querySelector('.popup-produce-class').textContent = item.class;
+        resultPopup.querySelector('.popup-produce-class').textContent = `${item.class} (Per ${item.method.replace('/', '')})`;
         resultPopup.querySelector('.popup-produce-description').textContent = item.dispDesc;
         JsBarcode(".popup-barcode-image", `${item.plu}`, {
             format: "code128",
             lineColor: "#000000",
-            width:5,
-            height:150,
+            width:6.25,
+            height:225,
+            marginLeft:75,
+            marginRight:75,
             displayValue: false
         });
 
@@ -160,7 +174,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// Installable module //
+// installables //
 self.addEventListener('install', event => {
     event.waitUntil(
         caches.open('plup-cache').then(cache => {
@@ -169,30 +183,49 @@ self.addEventListener('install', event => {
                 '/index.html',
                 '/assets/site/styles.css',
                 '/assets/site/script.js',
-                '/assets/data/en_US.csv',
+                '/manifest.json',
+                '/data/default_enUS.csv'
             ]);
         })
     );
-});
 
-self.addEventListener('fetch', event => {
-    event.respondWith(
-        caches.match(event.request).then(response => {
-            return response || fetch(event.request);
-        })
-    );
-});
-
-if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/service-worker.js').then(registration => {
-            console.log('Service Worker registered with scope:', registration.scope);
-        }, err => {
-            console.log('Service Worker registration failed:', err);
-        });
+    resetPreferencesButton.addEventListener('click', () => {
+        confirmationPopup.style.display = 'block';
+        menuOverlay.classList.add('visible');
+        menuOverlay.style.opacity = '1';
+        menuOverlay.style.visibility = 'visible';
     });
-};
-
-document.addEventListener('DOMContentLoaded', () => {
-    // selftest
 });
+
+function showConfirmationPopup() {
+    const confirmationPopup = document.getElementById('confirmation-popup');
+    confirmationPopup.style.display = 'block';
+}
+
+function closePopup() {
+    const confirmationPopup = document.getElementById('confirmation-popup');
+    confirmationPopup.style.display = 'none';
+}
+
+function resetAppData() {
+    // Clear cookies
+    document.cookie.split(";").forEach(cookie => {
+        document.cookie = cookie.trim().split("=")[0] + '=;expires=Thu, 01 Jan 1970 00:00:00 UTC;path=/';
+    });
+
+    // Clear cache
+    caches.keys().then(names => {
+        for (let name of names) {
+            caches.delete(name);
+        }
+    });
+
+    // Clear localStorage
+    localStorage.clear();
+
+    // Clear sessionStorage
+    sessionStorage.clear();
+
+    // Reload the page
+    location.reload();
+}

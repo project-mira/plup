@@ -4,30 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Plup - Produce Lookup Utility</title>
-    <link rel="icon" type="image/x-icon" sizes="32x32" href="/assets/img/favi/favi_wht.ico">
+    <link rel="icon" type="image/x-icon" media="(prefers-color-scheme: dark)" sizes="16x16 32x32 64x64 128x128 256x256" href="./assets/img/favi/favi_blk.ico">
+    <link rel="icon" type="image/x-icon" media="(prefers-color-scheme: light)" sizes="16x16 32x32 64x64 128x128 256x256" href="./assets/img/favi/favi_wht.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="assets/site/styles.css">
-    <link rel="manifest" href="/manifest.json">
+    <link rel="stylesheet" href="./assets/site/styles.css">
+    <link rel="stylesheet" href="./assets/lib/bootstrap-icons/bootstrap-icons.css">
+    <link rel="manifest" href="./assets/site/manifest.json">
 </head>
+
 <body>
     <header>
         <div id="hamburger-icon" class="hamburger-icon">
-            &#9776;
+            &#xF479;
         </div>
-        <img src="assets/branding/logo/w_logo.png" alt="Plup Logo" id="logo">
+        <img src="assets/branding/logo/fragments/w_logo_512.png" alt="Plup Logo" id="logo">
         <input type="search" id="searchInput" placeholder="Search by PLU or name..." autocomplete="off">
     </header>
     <div id="hamburger-menu" class="hamburger-menu">
         <div class="menu-icon">
-            <img src="assets/branding/icon/fragments/b_icon_512.png" alt="Menu Icon">
+            <img src="assets/branding/icon/fragments/b_icon_256.png" alt="Menu Icon">
             <span>Menu</span>
         </div>
         <ul>
-            <li><a href="#" id="home-link">🏠 Home</a></li>
-            <li><a href="#" id="preferences-link">⚙️ Preferences</a></li>
-            <li><a href="#" id="licenses-link">🧑‍💻 Licenses</a></li>
-            <li><a href="#" id="about-link">🤔 About</a></li>
+            <li><a href="#" id="home-link"><i class="bi bi-house-fill"></i>&nbsp;&nbsp;Home</a></li>
+            <li><a href="#" id="preferences-link"><i class="bi bi-gear-fill"></i>&nbsp;&nbsp;Preferences</a></li>
+            <li><a href="https://github.com/project-mira/plup/blob/main/info/licenses.md" target="_blank" id="licenses-link"><i class="bi bi-book-fill"></i>&nbsp;&nbsp;Licenses</a></li>
+            <li><a href="#" id="about-link"><i class="bi bi-info-circle-fill"></i>&nbsp;&nbsp;About</a></li>
         </ul>
     </div>
     <div id="menu-overlay" class="menu-overlay"></div>
@@ -41,11 +44,11 @@
             <p class="description">Changes the app's appearance between light and dark.</p>
             <label class="switch">
                 <select name="theme" id="theme-toggle">
-                    <option value="volvo">Auto (device theme)</option>
-                    <option value="saab">Light</option>
-                    <option value="opel">Dark</option>
-                    <option value="audi">Black (AMOLED)</option>
-                    <option value="audi">Custom</option>
+                    <option value="default">Auto (device theme)</option>
+                    <option value="light">Light</option>
+                    <option value="dark">Dark</option>
+                    <option value="amoled">Black (AMOLED)</option>
+                    <option value="custom">Custom</option>
                   </select>
             </label>
         </div>
@@ -57,22 +60,22 @@
         <div class="preference-card">
             <h3>Reset Preferences</h3>
             <p class="description">Reset all app preferences and data.</p>
-            <button id="reset-preferences" class="reset-button">Reset</button>
+            <button id="reset-preferences" onclick="showConfirmationPopup()" class="reset-button">Reset</button>
         </div>
     </main>
     <div id="about-popup" class="popup">
         <div class="popup-content">
-            <span class="close">&times;</span>
-            <img src="assets/branding/logo/b_logo.png" alt="Plup Logo" class="popup-logo">
+            <span class="close">&#xF659;</span>
+            <img src="assets/branding/logo/fragments/b_logo_256.png" alt="Plup Logo" class="popup-logo">
             <p class="version"></p>
             <p>Plup helps retail grocery cashiers quickly search for produce PLU codes and display UPCs on-the-fly.</p>
-            <p>&copy; 2024 Quar. All rights reserved.</p>
-            <p>This project is <a href="https://github.com/QuarTheDev/plup/" target="_blank">open-source</a> and licensed under the <a href="https://github.com/QuarTheDev/plup/blob/main/LICENSE" target="_blank">GNU GPL-3.0</a> license.</p>
+            <p>&copy; 2024 Project Mira. All rights reserved.</p>
+            <p>This project is <a href="https://github.com/project-mira/plup/" target="_blank">open-source</a> and licensed under the <a href="https://github.com/QuarTheDev/plup/blob/main/LICENSE" target="_blank">GNU AGPL-3.0</a> license.</p>
         </div>
     </div>
     <div id="result-popup" class="popup">
         <div class="popup-content">
-            <span class="close close-popup">&times;</span>
+            <span class="close close-popup">&#xF659;</span>
             <div class="popup-header">
                 <img src="" alt="Produce Image" class="popup-produce-image">
                 <div class="popup-details">
@@ -83,6 +86,16 @@
             </div>
             <p class="popup-produce-description"></p>
             <svg class="popup-barcode-image" alt="Scan me on any register."></svg>
+        </div>
+    </div>
+    <div id="confirmation-popup" class="popup">
+        <div class="popup-content">
+            <h2><i class="bi bi-exclamation-diamond"></i>&nbsp;&nbsp;Confirmation</h2>
+            <p>Are you sure you wish to permanently reset all app data? This cannot be undone!</p>
+            <div class="popup-buttons">
+                <button onclick="resetAppData()" class="reset-button">Reset</button>
+                <button onclick="closePopup()" class="cancel-button">Cancel</button>
+            </div>
         </div>
     </div>
     <script src="assets/site/script.js"></script>
